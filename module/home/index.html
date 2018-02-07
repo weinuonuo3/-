@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>在线监测</title>
+    <link rel="stylesheet" href="/static/kendoui/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="/static/kendoui/styles/kendo.bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/kendoui/styles/kendo.rtl.min.css" />
+    <link rel="stylesheet" href="/static/kendoui/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://218.1.67.12:8090/arcgis_js_api/library/3.20/3.20/dijit/themes/tundra/tundra.css" />
+    <link rel="stylesheet" href="http://218.1.67.12:8090/arcgis_js_api/library/3.20/3.20/esri/css/esri.css" />
+    <link rel="stylesheet" href="../../static/css/main.css" />
+    <script type="text/javascript" src="/static/kendoui/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/kendoui/js/jszip.min.js"></script>
+    <script type="text/javascript" src="/static/kendoui/js/kendo.dataviz.min.js"></script>
+    <script type="text/javascript" src="/static/kendoui/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="/static/kendoui/js/messages/kendo.messages.zh-CN.min.js"></script>
+    <script type="text/javascript" src="/static/kendoui/js/cultures/kendo.culture.zh-Hans.min.js"></script>
+    <script type="text/javascript" src="../../static/js/echarts.js"></script>
+    <script type="text/javascript" src="../../static/js/index.js"></script>
+    <script type="text/javascript" src="http://218.1.67.12:8090/arcgis_js_api/library/3.20/3.20/init.js?1"></script>
+    <script type="text/javascript">
+        var app;
+        var sitewhere_host = 'http://218.1.67.12:8091/sitewhere/api';
+        showLoadingImg();
+
+        function AppBus(data) {
+            app.appBus = data;
+        }
+
+        function showLoadingImg() {
+            $("#Loading").show();
+        }
+
+        function hideLoadingImg() {
+            $("#Loading").hide();
+        }
+    </script>
+</head>
+
+<body>
+    <!--气泡浮层遮罩-->
+    <div id="Loading">
+        <div class="background"></div>
+        <div class="imageLoading">加载中，请稍等...</div>
+    </div>
+    <div id="app"></div>
+    <script type="text/javascript">
+        window.onload = function() {
+            hideLoadingImg();
+        }
+    </script>
+</body>
+
+</html>
